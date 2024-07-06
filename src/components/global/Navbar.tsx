@@ -1,12 +1,13 @@
 import Image from "next/image"
 import Link from "next/link"
+import { RxDashboard } from "react-icons/rx"
 
-const Dashboard = () => {
+const Navbar = () => {
   return (
     <div className="font-poppins antialiased">
       <div
         id="view"
-        className="h-full flex flex-row"
+        className="h-full min-h-screen flex flex-row"
         x-data="{ sidenav: true }"
       >
         <button className="p-2 border-2 bg-white rounded-md border-gray-200 shadow-lg text-gray-500 focus:bg-teal-500 focus:outline-none focus:text-white absolute top-0 left-0 sm:hidden">
@@ -25,7 +26,7 @@ const Dashboard = () => {
         </button>
         <div
           id="sidebar"
-          className="bg-white h-screen md:block shadow-xl px-3 w-30 md:w-60 lg:w-60 overflow-x-hidden transition-transform duration-300 ease-in-out"
+          className="bg-white h-full md:block shadow-xl px-3 w-30 md:w-60 lg:w-60 overflow-x-hidden transition-transform duration-300 ease-in-out"
           x-show="sidenav"
         >
           <div className="space-y-6 md:space-y-10 mt-10">
@@ -45,7 +46,7 @@ const Dashboard = () => {
               />
               <div>
                 <h2 className="font-medium text-xs md:text-sm text-center text-teal-500">
-                  Kevin Salinas
+                  CodeMorth
                 </h2>
                 <p className="text-xs text-gray-500 text-center">
                   Administrador
@@ -75,18 +76,50 @@ const Dashboard = () => {
             </div>
             <div id="menu" className="flex flex-col space-y-2">
               <Link
-                href="/pokemons"
-                className="text-sm font-medium text-gray-700 py-2 px-2 hover:bg-teal-500 hover:text-white hover:text-base rounded-md transition duration-150 ease-in-out"
+                href="/dashboard"
+                className="text-sm flex justify-start items-center gap-[0.7rem] font-medium text-gray-700 py-2 px-2 hover:bg-teal-500 hover:text-white hover:text-base rounded-md transition duration-150 ease-in-out"
               >
-                <svg
-                  className="w-6 h-6 fill-current inline-block"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM11 13a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path>
-                </svg>
+                {" "}
+                <RxDashboard
+                  className="w-10 h-auto"
+                  height={1000}
+                  width={1000}
+                />
                 <span className="">Dashboard</span>
+              </Link>
+            </div>
+            <div id="menu" className="flex flex-col space-y-2">
+              <Link
+                href="/counter"
+                className="text-sm flex justify-start items-center gap-[0.7rem] font-medium text-gray-700 py-2 px-2 hover:bg-teal-500 hover:text-white hover:text-base rounded-md transition duration-150 ease-in-out"
+              >
+                <Image
+                  className="w-10 h-auto "
+                  src={
+                    "https://www.shareicon.net/data/128x128/2015/08/10/83197_calculator_1024x1024.png"
+                  }
+                  height={1000}
+                  width={1000}
+                  alt="Pokeball Icon"
+                />
+                <span className="">Counter</span>
+              </Link>
+            </div>
+            <div id="menu" className="flex flex-col space-y-2">
+              <Link
+                href="/pokemonsName"
+                className="text-sm flex justify-start items-center gap-[0.7rem] font-medium text-gray-700 py-2 px-2 hover:bg-teal-500 hover:text-white hover:text-base rounded-md transition duration-150 ease-in-out"
+              >
+                <Image
+                  className="w-10 h-auto "
+                  src={
+                    "https://upload.wikimedia.org/wikipedia/commons/5/53/Pok%C3%A9_Ball_icon.svg"
+                  }
+                  height={1000}
+                  width={1000}
+                  alt="Pokeball Icon"
+                />
+                <span className="">Pokemons</span>
               </Link>
             </div>
           </div>
@@ -96,4 +129,4 @@ const Dashboard = () => {
   )
 }
 
-export default Dashboard
+export default Navbar

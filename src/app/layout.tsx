@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 import "./globals.css"
-import Dashboard from "@/components/global/Dashboard"
-
+import { Providers } from "@/Redux"
+import Navbar from "@/components/global/Navbar"
 
 export const metadata: Metadata = {
   title: "Pokemons",
@@ -16,8 +16,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="flex">
-        <Dashboard />
-        {children}
+        <Providers>
+          <Navbar />
+          {children}
+        </Providers>
       </body>
     </html>
   )
